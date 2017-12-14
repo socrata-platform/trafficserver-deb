@@ -15,6 +15,14 @@ cd trafficserver-\$SOFTWARE_VERSION
 apt-get update
 echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90assumeyes
 
+cat > debian/copyright <<COPYRIGHT
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: http://trafficserver.apache.org
+
+Files: debian/*
+Copyright: $(date +%Y) Socrata
+COPYRIGHT
+
 debchange --create -v \$SOFTWARE_VERSION-\$PACKAGE_VERSION --package trafficserver \
   "Apache Traffic Server \$SOFTWARE_VERSION-\$PACKAGE_VERSION"
 mk-build-deps --install debian/control
