@@ -1,5 +1,5 @@
 #! /bin/bash
-docker run --env-file config/env -i --rm --volume $(pwd):/mnt/trafficserver-deb trafficserver-deb:latest /bin/bash <<SCRIPT
+docker run --env-file config/defaults -i --rm --volume $(pwd):/mnt/trafficserver-deb "$@" trafficserver-deb:latest /bin/bash <<SCRIPT
 set -e
 set -x
 
