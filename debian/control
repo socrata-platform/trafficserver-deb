@@ -1,0 +1,11 @@
+Source: trafficserver
+Maintainer: Socrata <engineering@socrata.com>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends:, autoconf, automake, build-essential, clang, m4, libcap-dev, libcurl4-openssl-dev, libhwloc-dev, liblua5.2-dev, libpcre3-dev, libssl-dev, ncurses-dev, tcl-dev
+
+Package: trafficserver
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Apache Traffic Server
