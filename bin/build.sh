@@ -25,7 +25,7 @@ COPYRIGHT
 
 debchange --create -v \$SOFTWARE_VERSION-\$PACKAGE_VERSION --package trafficserver \
   "Apache Traffic Server \$SOFTWARE_VERSION-\$PACKAGE_VERSION"
-mk-build-deps --install debian/control
+DEBIAN_FRONTEND=noninteractive mk-build-deps --install debian/control
 debuild -us -uc -B
 
 mv ../trafficserver_*_*.deb /mnt/trafficserver-deb
